@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Adulteration Detector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1 class="logo">Food Adulteration Detector</h1>
+        <p class="subtitle">Real-time sensor analysis for milk & water quality</p>
+        <div class="status-bar">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="statusText">Waiting for sensor data…</span>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2 class="card-title">Sample type</h2>
+        <div class="food-select-wrap">
+          <label for="foodSelect">Test sample</label>
+          <select id="foodSelect">
+            <option value="milk">Milk</option>
+            <option value="water">Water</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="card-title">Live sensor data</h2>
+        <div class="sensor-grid">
+          <div class="sensor-item">
+            <div class="sensor-label">Temperature</div>
+            <div class="sensor-value placeholder" id="temp">--</div>
+          </div>
+          <div class="sensor-item">
+            <div class="sensor-label">TDS</div>
+            <div class="sensor-value placeholder" id="tds">--</div>
+          </div>
+          <div class="sensor-item">
+            <div class="sensor-label">Turbidity</div>
+            <div class="sensor-value placeholder" id="turbidity">--</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card result-card">
+        <div class="result-label">Analysis result</div>
+        <div class="result-value unknown" id="result">--</div>
+      </section>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
