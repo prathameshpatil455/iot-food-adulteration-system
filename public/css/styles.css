@@ -194,20 +194,32 @@ select:focus-visible {
   transition: background 0.25s, color 0.25s;
 }
 
-.result-value.pure {
+.result-value.unknown {
+  background: var(--surface-hover);
+  color: var(--text-muted);
+}
+
+.result-value.safe,
+.result-value.normal-milk {
   background: rgba(63, 185, 80, 0.15);
   color: var(--accent);
 }
 
-.result-value.adulterated,
-.result-value.contaminated {
-  background: rgba(248, 81, 73, 0.15);
-  color: var(--danger);
+.result-value.slightly-mineralized {
+  background: rgba(63, 185, 80, 0.12);
+  color: #7ee787;
 }
 
-.result-value.unknown {
-  background: var(--surface-hover);
-  color: var(--text-muted);
+.result-value.hard-water,
+.result-value.diluted {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--warning);
+}
+
+.result-value.contaminated,
+.result-value.spoiled {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--danger);
 }
 
 @media (max-width: 400px) {
